@@ -89,7 +89,7 @@ We can place .env file in the main folder:
 
 ## Sample Result
 
-# Students Endpoint
+### Students Endpoint
 
     ``` http://127.0.0.1:8000/students/
 
@@ -128,7 +128,7 @@ We can place .env file in the main folder:
     ```
 
 
-# Schools Endpoint
+### Schools Endpoint
 
     ``` http://127.0.0.1:8000/schools/
 
@@ -154,7 +154,7 @@ We can place .env file in the main folder:
 
     ```
 
-# Nested Endpoint
+### Nested Endpoint
 
     ``` http://127.0.0.1:8000/schools/2/students/BS7BZFXIVMBV4LOVEOKI/
     
@@ -174,7 +174,7 @@ We can place .env file in the main folder:
 
     ```
 
-# Validation Maximum Student Reach
+### Validation Maximum Student Reach
 
     ``` http://127.0.0.1:8000/students/
     
