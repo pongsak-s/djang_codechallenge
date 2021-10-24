@@ -34,8 +34,9 @@ This project will use a simple and useful packages; but it would still be a good
 | :---: | :---: | 
 | POSTGRES | 1 | 
 | DJANGO with PIPENV setup | 1 | 
-| Building models and migrations  | X | 
-| Implementing DJANGO Rest Framework & DRF Nested Router  | X | 
+| Building models and migrations  | 1 | 
+| Implementing DJANGO Rest Framework & DRF Nested Router  | 1 | 
+| Host solution on Heroku | 2 | 
 | Complete unit test  | X | 
 | Microservices demonstration  | X | 
 
@@ -189,3 +190,13 @@ We can place .env file in the main folder:
             }
 
     ```
+
+
+## Host Solution on Heroku 
+
+[django-main-app.herokuapp.com/schools](https://django-main-app.herokuapp.com/schools)
+[django-main-app.herokuapp.com/students](https://django-main-app.herokuapp.com/students)
+[django-main-app.herokuapp.com/schools/1/students](django-main-app.herokuapp.com/schools/1/students)
+
+
+
