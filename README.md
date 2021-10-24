@@ -194,9 +194,9 @@ We can place .env file in the main folder:
 
 ## Host Solution on Heroku 
 
-[django-main-app.herokuapp.com/schools](https://django-main-app.herokuapp.com/schools)
-[django-main-app.herokuapp.com/students](https://django-main-app.herokuapp.com/students)
-[django-main-app.herokuapp.com/schools/1/students](django-main-app.herokuapp.com/schools/1/students)
+[django-main-app.herokuapp.com/schools](https://django-main-app.herokuapp.com/schools) </br>
+[django-main-app.herokuapp.com/students](https://django-main-app.herokuapp.com/students) </br>
+[django-main-app.herokuapp.com/schools/1/students](django-main-app.herokuapp.com/schools/1/students) </br>
 
 
 
