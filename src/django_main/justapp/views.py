@@ -29,3 +29,5 @@ class SchoolViewSet(viewsets.ModelViewSet):
     """Represent viewset of school """
     queryset = School.objects.all()
     serializer_class = SchoolSerializer
+    http_method_names = ['get', 'post', 'put', 'delete']
+
