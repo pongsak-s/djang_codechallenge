@@ -62,23 +62,23 @@ We can place .env file in the main folder:
 
 .
 └── django_main
-    ├── .env
-    ├── Pipfile
-    ├── Pipfile.lock
-    ├── django_main
-    │   ├── __init__.py
-    │   ├── asgi.py
-    │   ├── settings.py
-    │   ├── urls.py
-    │   └── wsgi.py
-    ├── justapp
-    │   ├── __init__.py
-    │   ├── admin.py
-    │   ├── apps.py
-    │   ├── migrations
-    │   │   └── __init__.py
-    │   ├── models.py
-    │   ├── tests.py
-    │   └── views.py
-    └── manage.py
+    ├── .env <br/>
+    ├── Pipfile <br/>
+    ├── Pipfile.lock <br/>
+    ├── django_main <br/>
+    │   ├── __init__.py <br/>
+    │   ├── asgi.py <br/>
+    │   ├── settings.py <br/>
+    │   ├── urls.py <br/>
+    │   └── wsgi.py <br/>
+    ├── justapp <br/>
+    │   ├── __init__.py <br/>
+    │   ├── admin.py <br/>
+    │   ├── apps.py <br/>
+    │   ├── migrations <br/>
+    │   │   └── __init__.py <br/>
+    │   ├── models.py <br/>
+    │   ├── tests.py <br/>
+    │   └── views.py <br/>
+    └── manage.py <br/>
 
