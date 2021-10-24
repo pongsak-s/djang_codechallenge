@@ -60,25 +60,132 @@ The environment file .env has been setup as below. Database name will be DBNAMEP
 
 We can place .env file in the main folder:
 
-.
-└── django_main
-    ├── .env <br/>
-    ├── Pipfile <br/>
-    ├── Pipfile.lock <br/>
-    ├── django_main <br/>
-    │   ├── __init__.py <br/>
-    │   ├── asgi.py <br/>
-    │   ├── settings.py <br/>
-    │   ├── urls.py <br/>
-    │   └── wsgi.py <br/>
-    ├── justapp <br/>
-    │   ├── __init__.py <br/>
-    │   ├── admin.py <br/>
-    │   ├── apps.py <br/>
-    │   ├── migrations <br/>
-    │   │   └── __init__.py <br/>
-    │   ├── models.py <br/>
-    │   ├── tests.py <br/>
-    │   └── views.py <br/>
-    └── manage.py <br/>
+    ```
+        .
+        └── django_main
+            ├── .env
+            ├── Pipfile
+            ├── Pipfile.lock
+            ├── django_main
+            │   ├── __init__.py
+            │   ├── asgi.py
+            │   ├── settings.py
+            │   ├── urls.py
+            │   └── wsgi.py
+            ├── justapp
+            │   ├── __init__.py
+            │   ├── admin.py
+            │   ├── apps.py
+            │   ├── migrations
+            │   │   └── __init__.py
+            │   ├── models.py
+            │   ├── tests.py
+            │   └── views.py
+            └── manage.py
+    ```
 
+
+
+## Sample Result
+
+# Students Endpoint
+
+    ``` http://127.0.0.1:8000/students/
+
+        HTTP 200 OK
+        Allow: GET, POST
+        Content-Type: application/json
+        Vary: Accept
+
+        [
+            {
+                "pk": "BBFAP5Z0FIM1RAV2SV5U",
+                "firstname": "Pongsak",
+                "lastname": "S",
+                "studentid": "BBFAP5Z0FIM1RAV2SV5U",
+                "created": "2021-10-24",
+                "school": 2
+            },
+            {
+                "pk": "BS7BZFXIVMBV4LOVEOKI",
+                "firstname": "Pongsak2",
+                "lastname": "S",
+                "studentid": "BS7BZFXIVMBV4LOVEOKI",
+                "created": "2021-10-24",
+                "school": 2
+            },
+            {
+                "pk": "JY5NJLFBHEJ86ZNYUMSM",
+                "firstname": "Pongsak3",
+                "lastname": "S",
+                "studentid": "JY5NJLFBHEJ86ZNYUMSM",
+                "created": "2021-10-24",
+                "school": 1
+            }
+        ]
+
+    ```
+
+
+# Schools Endpoint
+
+    ``` http://127.0.0.1:8000/schools/
+
+            HTTP 200 OK
+            Allow: GET, POST, HEAD, OPTIONS
+            Content-Type: application/json
+            Vary: Accept
+
+            [
+                {
+                    "pk": 1,
+                    "name": "MIT",
+                    "max_students": 5,
+                    "created": "2021-10-24"
+                },
+                {
+                    "pk": 2,
+                    "name": "Chula",
+                    "max_students": 2,
+                    "created": "2021-10-24"
+                }
+            ]
+
+    ```
+
+# Nested Endpoint
+
+    ``` http://127.0.0.1:8000/schools/2/students/BS7BZFXIVMBV4LOVEOKI/
+    
+            HTTP 200 OK
+            Allow: GET, PUT, DELETE
+            Content-Type: application/json
+            Vary: Accept
+
+            {
+                "pk": "BS7BZFXIVMBV4LOVEOKI",
+                "firstname": "Pongsak2",
+                "lastname": "S",
+                "studentid": "BS7BZFXIVMBV4LOVEOKI",
+                "created": "2021-10-24",
+                "school": 2
+            }
+
+    ```
+
+# Validation Maximum Student Reach
+
+    ``` http://127.0.0.1:8000/students/
+    
+            HTTP 400 Bad Request
+            Allow: GET, POST
+            Content-Type: application/json
+            Vary: Accept
+
+            {
+                "school": [
+                    "maximum number of student reached"
+                ]
+            }
+
+    ```
