@@ -5,13 +5,11 @@ This repository contains code that represents simple restful web API with DJANGO
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These repo will get you an idea how to create a simple restful web API with DJANGO. We will walkthrough packages required, code behind how this works, and how all pieces connected together.
 
 Overall Architecture:
 
 ![overview architecture](writeups/api.drawio.png)
-
-
 
 
 ### Built With
@@ -20,12 +18,26 @@ This project makes sure we have used the following packages and versions:
 
     ```python
         "packages": {
-	        django = "===3.0.4",
-			djangorestframework = "==3.11",
-			drf-nested-routers = "0.93.4",
-			psycopg2 = "==2.8.6"
+            django = "===3.0.4",
+            djangorestframework = "==3.11",
+            drf-nested-routers = "0.93.4",
+            psycopg2 = "==2.8.6"
 		}
     ```
+
+
+### Estimated Learning/ Implementing Time
+
+This project will use a simple and useful packages; but it would still be a good idea to log how much time I have learn and implement this so that you may be able to follow in later stage:
+
+| Topic | Time (hr) | 
+| :---: | :---: | 
+| POSTGRES | 1 | 
+| DJANGO with PIPENV setup | 1 | 
+| Building models and migrations  | X | 
+| Implementing DJANGO Rest Framework & DRF Nested Router  | X | 
+| Complete unit test  | X | 
+| Microservices demonstration  | X | 
 
 
 ## Authors
