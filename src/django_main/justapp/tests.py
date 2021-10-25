@@ -22,7 +22,6 @@ class ModelHelpers_TestCase(TestCase):
     	mocked_student.objects.filter.assert_called_once() 
 
     
-    
     @patch('justapp.models.Student') # injecting student mock -> mocked_student
     def test_is_not_reach_max_students(self, mocked_student):
         """is_not_reach_max_students helpers shall raise error if reaching max students"""

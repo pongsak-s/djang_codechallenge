@@ -37,7 +37,7 @@ This project will use a simple and useful packages; but it would still be a good
 | Building models and migrations  | 1 | 
 | Implementing DJANGO Rest Framework & DRF Nested Router  | 1 | 
 | Host solution on Heroku | 2 | 
-| Complete unit test  | X | 
+| Unit test with Mock  | 2 | 
 | Microservices demonstration  | X | 
 
 
@@ -199,4 +199,55 @@ We can place .env file in the main folder:
 [django-main-app.herokuapp.com/schools/1/students](django-main-app.herokuapp.com/schools/1/students) </br>
 
 
+## Unit Test with Mock()
 
+This module has implemented Django TestCase with Mock. In this case, we can inject behaviour of models Student and School so that we can test and validate helper functions (i.e. unique_rand, is_not_reach_max_students).
+
+
+Code: 
+
+    ``` djang_codechallenge/src/justapp/tests.py
+    
+        @patch('justapp.models.Student') # injecting student mock -> mocked_student
+        def test_unique_rand(self, mocked_student):
+            """unique_rand helper can run correctly"""
+            # mocking queryset
+            mocked_queryset = Mock()
+            mocked_queryset.exists.return_value = False
+            # injecting mocked_queryset into mocked_student
+            mocked_student.objects.filter.return_value = mocked_queryset
+            # 1) validate output is 20 chars
+            self.assertEqual(len(unique_rand()),20)
+            # 2) validate student filter has been called
+            mocked_student.objects.filter.assert_called_once() 
+
+        
+        @patch('justapp.models.Student') # injecting student mock -> mocked_student
+        def test_is_not_reach_max_students(self, mocked_student):
+            """is_not_reach_max_students helpers shall raise error if reaching max students"""
+            # mocked school object
+            mocked_school = Mock(spec=School)
+            mocked_school.max_students = 2
+            # mocking queryset
+            mocked_queryset = Mock()
+            mocked_queryset.count.return_value = 2
+            # injecting mocked_queryset into mocked_student
+            mocked_student.objects.filter.return_value = mocked_queryset
+            self.assertRaises(ValidationError,is_not_reach_max_students, mocked_school)
+            mocked_student.objects.filter.assert_called_once() 
+
+    ```
+
+Result: 
+
+    ``` python manage.py test
+    
+        Creating test database for alias 'default'...
+        System check identified no issues (0 silenced).
+        ..
+        ----------------------------------------------------------------------
+        Ran 2 tests in 0.006s
+
+        OK
+
+    ```
