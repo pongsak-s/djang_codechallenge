@@ -38,6 +38,7 @@ This project will use a simple and useful packages; but it would still be a good
 | Implementing DJANGO Rest Framework & DRF Nested Router  | 1 | 
 | Host solution on Heroku | 2 | 
 | Unit test with Mock  | 2 | 
+| Search and Filter  | 0.5 | 
 | Microservices demonstration  | X | 
 
 
@@ -240,7 +241,7 @@ We can place .env file in the main folder:
 
 [django-main-app.herokuapp.com/schools](https://django-main-app.herokuapp.com/schools) </br>
 [django-main-app.herokuapp.com/students](https://django-main-app.herokuapp.com/students) </br>
-[django-main-app.herokuapp.com/schools/1/students](https://django-main-app.herokuapp.com/schools/1/students) </br>
+[django-main-app.herokuapp.com/schools/4/students](https://django-main-app.herokuapp.com/schools/1/students) </br>
 
 [django-main-app.herokuapp.com/students/?search=jane](https://django-main-app.herokuapp.com/students/?search=jane) </br>
 [django-main-app.herokuapp.com/schools/4/students/?search=jane&ordering=age](https://django-main-app.herokuapp.com/schools/4/students/?search=jane&ordering=age) </br>
