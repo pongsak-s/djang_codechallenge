@@ -242,6 +242,9 @@ We can place .env file in the main folder:
 [django-main-app.herokuapp.com/students](https://django-main-app.herokuapp.com/students) </br>
 [django-main-app.herokuapp.com/schools/1/students](django-main-app.herokuapp.com/schools/1/students) </br>
 
+[https://django-main-app.herokuapp.com/students/?search=jane](https://django-main-app.herokuapp.com/students/?search=jane) </br>
+[https://django-main-app.herokuapp.com/schools/4/students/?search=jane&ordering=age](https://django-main-app.herokuapp.com/schools/4/students/?search=jane&ordering=age) </br>
+
 
 ## Unit Test with Mock()
 
