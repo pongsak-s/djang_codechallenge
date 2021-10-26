@@ -191,6 +191,50 @@ We can place .env file in the main folder:
 
     ```
 
+### Search and Ordering Filter
+
+    ``` http://127.0.0.1:8000/students/?search=jane&ordering=age
+    
+            HTTP 200 OK
+            Allow: GET, POST
+            Content-Type: application/json
+            Vary: Accept
+
+            [
+                {
+                    "pk": "3AFP89MBBFCI195TJF62",
+                    "firstname": "Jane",
+                    "lastname": "Test2",
+                    "studentid": "3AFP89MBBFCI195TJF62",
+                    "created": "2021-10-26",
+                    "school": 3,
+                    "age": 1,
+                    "nationality": "Nepali"
+                },
+                {
+                    "pk": "QY78X8479FY7RPAPHCD9",
+                    "firstname": "Jane",
+                    "lastname": "Mana",
+                    "studentid": "QY78X8479FY7RPAPHCD9",
+                    "created": "2021-10-26",
+                    "school": 3,
+                    "age": 5,
+                    "nationality": "English"
+                },
+                {
+                    "pk": "VRYLPZAUG7QULF669KPH",
+                    "firstname": "Jane",
+                    "lastname": "Pongsak",
+                    "studentid": "VRYLPZAUG7QULF669KPH",
+                    "created": "2021-10-26",
+                    "school": 3,
+                    "age": 20,
+                    "nationality": "Japanese"
+                }
+            ]
+
+    ```
+
 
 ## Host Solution on Heroku 
 
