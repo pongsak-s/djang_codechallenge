@@ -15,8 +15,8 @@ This repository contains code that represents simple restful web API with DJANGO
 9. [Message Queue RabbitMQ with Pika](#message_queue)
 
 
-<a name="getting_started"/>
-## Getting Started
+
+## Getting Started <a name="getting_started"/>
 
 These repo will get you an idea how to create a simple restful web API with DJANGO. We will walkthrough packages required, code behind how this works, and how all pieces connected together.
 
@@ -56,7 +56,7 @@ This project will use a simple and useful packages; but it would still be a good
 | Host solution on Heroku | 2 | 
 | Unit test with Mock  | 2 | 
 | Search and Filter  | 0.5 | 
-| Simple Message Queue demonstration  | X | 
+| Simple Message Queue demonstration  | 1.5 | 
 
 
 <a name="authors"/>
