@@ -1,6 +1,7 @@
 from django.urls import include, path
 from rest_framework_nested import routers
 from justapp.views import StudentViewSet, SchoolViewSet, StudentSchoolViewSet
+from justapp.services import Service1
 
 # create router for schools and students endpoint
 router = routers.SimpleRouter()
@@ -15,4 +16,5 @@ schools_router.register(r'students', StudentSchoolViewSet, basename='student-sch
 urlpatterns = [
     path(r'', include(router.urls)),
     path(r'', include(schools_router.urls)),
+    path('service1', Service1.call),
 ]

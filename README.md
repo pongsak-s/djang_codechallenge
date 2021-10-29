@@ -3,6 +3,19 @@
 This repository contains code that represents simple restful web API with DJANGO.
 
 
+# Table of Contents
+1. [Getting Started](#getting_started)
+2. [Built With](#built_with)
+3. [Estimated Learning/ Implementing Time](#estimated_learning)
+4. [Authors](#authors)
+5. [Environment File](#environment_file)
+6. [Sample Result](#sample_result)
+7. [Host Solution on Heroku ](#on_heroku)
+8. [Unit Test with Mock](#unit_test)
+9. [Message Queue RabbitMQ with Pika](#message_queue)
+
+
+<a name="getting_started"/>
 ## Getting Started
 
 These repo will get you an idea how to create a simple restful web API with DJANGO. We will walkthrough packages required, code behind how this works, and how all pieces connected together.
@@ -12,6 +25,7 @@ Overall Architecture:
 ![overview architecture](writeups/api.drawio.png)
 
 
+<a name="built_with"/>
 ## Built With
 
 This project makes sure we have used the following packages and versions:
@@ -21,11 +35,14 @@ This project makes sure we have used the following packages and versions:
             django = "===3.0.4",
             djangorestframework = "==3.11",
             drf-nested-routers = "0.93.4",
-            psycopg2 = "==2.8.6"
+            psycopg2 = "==2.8.6",
+            mock = "==4.0.3", # unit test
+            pika = "==1.2.0"  # message queue (rabbitmq)
 		}
     ```
 
 
+<a name="estimated_learning"/>
 ## Estimated Learning/ Implementing Time
 
 This project will use a simple and useful packages; but it would still be a good idea to log how much time I have learn and implement this so that you may be able to follow in later stage:
@@ -39,14 +56,16 @@ This project will use a simple and useful packages; but it would still be a good
 | Host solution on Heroku | 2 | 
 | Unit test with Mock  | 2 | 
 | Search and Filter  | 0.5 | 
-| Microservices demonstration  | X | 
+| Simple Message Queue demonstration  | X | 
 
 
+<a name="authors"/>
 ## Authors
 
  [Pongsak](misc/pongsaks_cv.pdf) is a technical leader who has a great passion in technology; he has been working with industries to enable digital platform and manage project delivery; although currently working in project management, [Pongsak](misc/pongsaks_cv.pdf) loves coding and never stop learning technology in depth; [Pongsak](misc/pongsaks_cv.pdf) is looking for assignments with hands-on coding / implementing; find out more in my resume at [Pongsak](misc/pongsaks_cv.pdf)
 
 
+<a name="environment_file"/>
 ## Environment File
 
 The environment file .env has been setup as below. Database name will be DBNAMEPREFIX + STATE so that it will get correctly move to different development state.
@@ -63,31 +82,49 @@ The environment file .env has been setup as below. Database name will be DBNAMEP
 We can place .env file in the main folder:
 
     ```
+        
         .
-        └── django_main
-            ├── .env
-            ├── Pipfile
-            ├── Pipfile.lock
-            ├── django_main
-            │   ├── __init__.py
-            │   ├── asgi.py
-            │   ├── settings.py
-            │   ├── urls.py
-            │   └── wsgi.py
-            ├── justapp
-            │   ├── __init__.py
-            │   ├── admin.py
-            │   ├── apps.py
-            │   ├── migrations
-            │   │   └── __init__.py
-            │   ├── models.py
-            │   ├── tests.py
-            │   └── views.py
-            └── manage.py
+        ├── README.md
+        ├── misc
+        │  └── pongsaks_cv.pdf
+        ├── src
+        │  ├── django_main
+        │  │  ├── Pipfile
+        │  │  ├── Pipfile.lock
+        │  │  ├── django_main
+        │  │  │  ├── __init__.py
+        │  │  │  ├── asgi.py
+        │  │  │  ├── settings.py
+        │  │  │  ├── urls.py
+        │  │  │  └── wsgi.py
+        │  │  ├── justapp
+        │  │  │  ├── __init__.py
+        │  │  │  ├── admin.py
+        │  │  │  ├── apps.py
+        │  │  │  ├── migrations
+        │  │  │  │  ├── 0001_initial.py
+        │  │  │  │  ├── 0002_auto_20211026_1439.py
+        │  │  │  │  └── __init__.py
+        │  │  │  ├── models.py
+        │  │  │  ├── serializers.py
+        │  │  │  ├── services.py
+        │  │  │  ├── tests.py
+        │  │  │  └── views.py
+        │  │  └── manage.py
+        │  └── flask_micro_service1
+        │      ├── Pipfile
+        │      ├── Pipfile.lock
+        │      ├── app.py
+        │      └── channel_wrapper.py
+        └── writeups
+            ├── api.drawio
+            └── api.drawio.png
+
     ```
 
 
 
+<a name="sample_result"/>
 ## Sample Result
 
 ### Students Endpoint
@@ -237,6 +274,7 @@ We can place .env file in the main folder:
     ```
 
 
+<a name="on_heroku"/>
 ## Host Solution on Heroku 
 
 [django-main-app.herokuapp.com/schools](https://django-main-app.herokuapp.com/schools) </br>
@@ -247,6 +285,7 @@ We can place .env file in the main folder:
 [django-main-app.herokuapp.com/schools/4/students/?search=jane&ordering=age](https://django-main-app.herokuapp.com/schools/4/students/?search=jane&ordering=age) </br>
 
 
+<a name="unit_test"/>
 ## Unit Test with Mock()
 
 This module has implemented Django TestCase with Mock. In this case, we can inject behaviour of models Student and School so that we can test and validate helper functions (i.e. unique_rand, is_not_reach_max_students).
@@ -299,3 +338,27 @@ Result:
         OK
 
     ```
+
+
+<a name="message_queue"/>
+## Message Queue RabbitMQ with Pika
+
+This module has implemented to use RabbitMQ (via Pika) to connect between Django and Flask servers.
+
+Sample Result: 
+
+
+    ``` http://127.0.0.1:8000/service1
+    
+        {"message": "submit to queue successfully!"}
+
+    ```
+
+
+    ``` http://127.0.0.1:8000/service1
+    
+         [*] Waiting for queue messages.
+         [x] MQ Received {'phone': '+66-92-123-4567', 'message': 'mocking message'}
+
+    ```
+
