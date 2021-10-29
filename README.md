@@ -25,8 +25,8 @@ Overall Architecture:
 ![overview architecture](writeups/api.drawio.png)
 
 
-<a name="built_with"/>
-## Built With
+
+## Built With <a name="built_with"/>
 
 This project makes sure we have used the following packages and versions:
 
@@ -42,8 +42,8 @@ This project makes sure we have used the following packages and versions:
     ```
 
 
-<a name="estimated_learning"/>
-## Estimated Learning/ Implementing Time
+
+## Estimated Learning/ Implementing Time <a name="estimated_learning"/>
 
 This project will use a simple and useful packages; but it would still be a good idea to log how much time I have learn and implement this so that you may be able to follow in later stage:
 
@@ -59,14 +59,14 @@ This project will use a simple and useful packages; but it would still be a good
 | Simple Message Queue demonstration  | 1.5 | 
 
 
-<a name="authors"/>
-## Authors
+
+## Authors <a name="authors"/>
 
  [Pongsak](misc/pongsaks_cv.pdf) is a technical leader who has a great passion in technology; he has been working with industries to enable digital platform and manage project delivery; although currently working in project management, [Pongsak](misc/pongsaks_cv.pdf) loves coding and never stop learning technology in depth; [Pongsak](misc/pongsaks_cv.pdf) is looking for assignments with hands-on coding / implementing; find out more in my resume at [Pongsak](misc/pongsaks_cv.pdf)
 
 
-<a name="environment_file"/>
-## Environment File
+
+## Environment File <a name="environment_file"/>
 
 The environment file .env has been setup as below. Database name will be DBNAMEPREFIX + STATE so that it will get correctly move to different development state.
 
@@ -124,8 +124,8 @@ We can place .env file in the main folder:
 
 
 
-<a name="sample_result"/>
-## Sample Result
+
+## Sample Result <a name="sample_result"/>
 
 ### Students Endpoint
 
@@ -274,8 +274,8 @@ We can place .env file in the main folder:
     ```
 
 
-<a name="on_heroku"/>
-## Host Solution on Heroku 
+
+## Host Solution on Heroku <a name="on_heroku"/>
 
 [django-main-app.herokuapp.com/schools](https://django-main-app.herokuapp.com/schools) </br>
 [django-main-app.herokuapp.com/students](https://django-main-app.herokuapp.com/students) </br>
@@ -285,8 +285,8 @@ We can place .env file in the main folder:
 [django-main-app.herokuapp.com/schools/4/students/?search=jane&ordering=age](https://django-main-app.herokuapp.com/schools/4/students/?search=jane&ordering=age) </br>
 
 
-<a name="unit_test"/>
-## Unit Test with Mock()
+
+## Unit Test with Mock() <a name="unit_test"/>
 
 This module has implemented Django TestCase with Mock. In this case, we can inject behaviour of models Student and School so that we can test and validate helper functions (i.e. unique_rand, is_not_reach_max_students).
 
@@ -340,8 +340,8 @@ Result:
     ```
 
 
-<a name="message_queue"/>
-## Message Queue RabbitMQ with Pika
+
+## Message Queue RabbitMQ with Pika <a name="message_queue"/>
 
 This module has implemented to use RabbitMQ (via Pika) to connect between Django and Flask servers.
 
